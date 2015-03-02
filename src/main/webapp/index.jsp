@@ -12,6 +12,7 @@
         <p><a href="hello">See greetings from servlet</a></p>
         <p><a href="form">Fill a form</a></p>
         <p><a href="getPersonData.jsp">Fill a Person form</a></p>
-        <p><a href="test.jsp">Placki</a></p>
+
+        <p><a href="rejestracja.jsp">Placki</a></p>
     </body>
 </html>

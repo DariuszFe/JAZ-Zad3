@@ -1,71 +1,70 @@
 
 package com.example.servletjspdemo.web;
 
-import java.io.IOException;
+import com.example.servletjspdemo.domain.ConferenceRegistration;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/Rejestracja")
 public class Rejestracja extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
-     
-    public Rejestracja() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		String name = request.getParameter("name");
-		String lastname = request.getParameter("lastName");
-		String email = request.getParameter("email");
-		String email2 = request.getParameter("email2");
-		String prac = request.getParameter("prac");
-		String zaj = request.getParameter("zaj");
-		
-		HttpSession session = request.getSession();
-		
-		if(name!=null && !name.equals(""))
-		{
-			session.setAttribute("name", name);
-		}
-		
-			session.setAttribute("lastname", lastname);
-			session.setAttribute("email", email);
-			session.setAttribute("email2", email2);
-			session.setAttribute("prac", prac);
-			session.setAttribute("zaj", zaj);
-		
+	private ServletContext ctx;
+	private List<ConferenceRegistration> conferenceRegistrationList = new ArrayList<ConferenceRegistration>();
 
-		response.getWriter().println("ZAREJESTROWANO :");
-		response.getWriter().println("Imie : " +  session.getAttribute("name"));
-		response.getWriter().println("Nazwisko : " +  session.getAttribute("lastname"));
-		response.getWriter().println("Email : " +  session.getAttribute("email"));
-		response.getWriter().println("Pracodawca : " +  session.getAttribute("prac"));
-		response.getWriter().println("Stanowisko : " +  session.getAttribute("zaj"));
-		//response.sendRedirect("test.jsp");
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+
+		ctx = config.getServletContext();
+
+		if (ctx.getAttribute("conferenceRegistrationList") != null)
+			conferenceRegistrationList = (List<ConferenceRegistration>) ctx.getAttribute("conferenceRegistrationList");
+		else
+			ctx.setAttribute("conferenceRegistrationList", conferenceRegistrationList);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = (String) request.getParameter("name");
-		HttpSession session = request.getSession();
-		ServletContext context = request.getServletContext();
-		
-		if(name!=null && !name.equals(""))
-		{
-			session.setAttribute("name", name);
-			context.setAttribute("name", name);
+
+		ConferenceRegistration registration = new ConferenceRegistration();
+
+		registration.setName(request.getParameter("name"));
+		registration.setLastName(request.getParameter("lastName"));
+		registration.setEmail(request.getParameter("email"));
+		registration.setPrac(request.getParameter("prac"));
+		registration.setZaj(request.getParameter("zaj"));
+
+		if (conferenceRegistrationList.size() >= 5) {
+			response.sendRedirect("error_registration_unavailable.jsp");
+			return;
 		}
 
-		response.getWriter().println("Hello " +  name + "!");
-		response.getWriter().println("Hello from session " +  session.getAttribute("name") + "!");
-		response.getWriter().println("Hello from context " +  context.getAttribute("name") + "!");
-	
+		if (conferenceRegistrationList.contains(registration)) {
+			response.sendRedirect("error_registration_exists.jsp");
+			return;
+		}
+
+		conferenceRegistrationList.add(registration);
+
+		response.sendRedirect("registration_confirm.jsp");
 	}
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		if (conferenceRegistrationList.size() >= 1) {
+			response.sendRedirect("error_registration_unavailable.jsp");
+			return;
+		}
+
+		request.getRequestDispatcher("rejestracja.jsp").forward(request, response);
+	}
 }
