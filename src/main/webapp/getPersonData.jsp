@@ -14,6 +14,11 @@
 <form action="addPerson.jsp">
 
   First name :<input type="text" name="firstName" value="${person.firstName}" /><br />
+  Last name :<input type="text" name="lastName" value="${person.lastName}" /><br />
+  Email name :<input type="text" name="emailName" value="${person.emailName}" /><br />
+  Email2 name :<input type="text" name="email2Name" value="${person.email2Name}" /><br />
+  Employer name :<input type="text" name="employerName" value="${person.employerName}" /><br />
+  Occupation name :<input type="text" name="occupation" value="${person.occupation}" /><br />
   Year of birth :<input type="text"  name="yob" value="${person.yob}" /><br />
   <input type="submit" value=" OK ">
   

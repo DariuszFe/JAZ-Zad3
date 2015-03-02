@@ -12,7 +12,8 @@
 <jsp:useBean id="storage" class="com.example.servletjspdemo.service.StorageService" scope="application" />
 <%
   for (Person person : storage.getAllPersons()) {
-	  out.println("<p>First name: " + person.getFirstName() + "; Year of birth: " + person.getYob() + "</p>");
+	  out.println("<p>First name: " + person.getFirstName() + "; Year of birth: " + person.getYob() + "; LastName: " +person.getLastName() +"; Email:"
+			   + person.getEmailName() +"; Email2: " + person.getEmail2Name() + "; Employer Name: " + person.getEmployerName() + "; Occupation: " + person.getOccupation() +"; </p>" );
   }
 %>
 <p>

@@ -19,6 +19,12 @@
 
 <p>Following person has been added to storage: </p>
 <p>First name: ${person.firstName} </p>
+<p>Last name: ${person.lastName} </p>
+<p>Email name: ${person.emailName} </p>
+<p>Email2 name: ${person.email2Name} </p>
+<p>Employer name: ${person.employerName} </p>
+<p>Occupation name: ${person.occupation} </p>
+
 <p>Year of birth: <jsp:getProperty name="person" property="yob"></jsp:getProperty></p>
 <p>
   <a href="showAllPersons.jsp">Show all persons</a>
