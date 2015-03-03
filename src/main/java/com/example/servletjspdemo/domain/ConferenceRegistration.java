@@ -1,8 +1,5 @@
 package com.example.servletjspdemo.domain;
 
-/**
- * Created by robert on 02.03.15.
- */
 public class ConferenceRegistration {
 
     private String name;

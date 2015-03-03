@@ -60,7 +60,7 @@ public class Rejestracja extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		if (conferenceRegistrationList.size() >= 1) {
+		if (conferenceRegistrationList.size() >= 5) {
 			response.sendRedirect("error_registration_unavailable.jsp");
 			return;
 		}

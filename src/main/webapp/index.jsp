@@ -13,6 +13,6 @@
         <p><a href="form">Fill a form</a></p>
         <p><a href="getPersonData.jsp">Fill a Person form</a></p>
 
-        <p><a href="rejestracja.jsp">Placki</a></p>
+        <p><a href="rejestracja.jsp">Rejestracja</a></p>
     </body>
 </html>

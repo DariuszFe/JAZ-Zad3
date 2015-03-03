@@ -8,5 +8,7 @@
 </head>
 <body>
 Twoje zgłoszenie zostało dodane
+
+<p><a href="showPerson.jsp">Zobacz zgłoszonych</a></p>
 </body>
 </html>
