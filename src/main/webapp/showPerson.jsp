@@ -4,8 +4,8 @@
 <title> Tag Example</title>
 </head>
 <body>
-<c:forEach var="i" begin="1" end="5">
-   Item <c:out value="${i}"/><p>
+<c:forEach var="conferenceRegistrationList" begin="1" end="5">
+   <c:out value="${conferenceRegistrationList}"/><p>
 </c:forEach>
 </body>
 </html>

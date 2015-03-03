@@ -9,6 +9,6 @@
 <body>
 Twoje zgłoszenie zostało dodane
 
-<p><a href="showPerson.jsp">Zobacz zgłoszonych</a></p>
+<p><a href="show">Zobacz zgłoszonych</a></p>
 </body>
 </html>
