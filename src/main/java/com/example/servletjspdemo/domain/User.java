@@ -4,8 +4,8 @@ public class User {
 	
 	private String login = " ";
 	private String password = " ";
-	boolean admin;
-	boolean premium;
+	private boolean admin;
+	private boolean premium;
 	
 	public boolean isAdmin() {
 		return admin;
