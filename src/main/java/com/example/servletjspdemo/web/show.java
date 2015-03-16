@@ -40,7 +40,7 @@ public class show extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.getRequestDispatcher("showPerson.jsp").forward(request, response);
+		request.getRequestDispatcher("showUser.jsp").forward(request, response);
 
 
 		

@@ -5,12 +5,9 @@
 </head>
 <body>
 <table border="1">
-   <c:forEach items="${conferenceRegistrationList}" var="p">
+   <c:forEach items="${UserList}" var="p">
       <tr>
-         <td>${p.name} ${p.lastName}</td>
-         <td>${p.email}</td>
-         <td>${p.prac}</td>
-         <td>${p.zaj}</td>
+         <td>${p.login} ${p.password}</td>
       </tr>
 </c:forEach>
 </table>
