@@ -2,26 +2,25 @@ package com.example.servletjspdemo.domain;
 
 public class ConferenceRegistration {
 
-    private String name;
-    private String lastName;
+    private String login;
+    private String password;
     private String email;
-    private String prac;
-    private String zaj;
 
-    public String getName() {
-        return name;
+
+    public String getLogin() {
+        return login;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String login) {
+        this.login = login;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPassword() {
+        return password;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -32,25 +31,10 @@ public class ConferenceRegistration {
         this.email = email;
     }
 
-    public String getPrac() {
-        return prac;
-    }
-
-    public void setPrac(String prac) {
-        this.prac = prac;
-    }
-
-    public String getZaj() {
-        return zaj;
-    }
-
-    public void setZaj(String zaj) {
-        this.zaj = zaj;
-    }
 
     @Override
     public boolean equals(Object obj) {
-        if (((ConferenceRegistration) obj).getEmail().equals(email))
+        if (((ConferenceRegistration) obj).getPassword().equals(password))
             return true;
 
         return false;

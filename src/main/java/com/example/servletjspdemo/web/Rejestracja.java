@@ -37,11 +37,9 @@ public class Rejestracja extends HttpServlet {
 
 		ConferenceRegistration registration = new ConferenceRegistration();
 
-		registration.setName(request.getParameter("name"));
-		registration.setLastName(request.getParameter("lastName"));
+		registration.setName(request.getParameter("login"));
+		registration.setPassword(request.getParameter("password"));
 		registration.setEmail(request.getParameter("email"));
-		registration.setPrac(request.getParameter("prac"));
-		registration.setZaj(request.getParameter("zaj"));
 
 		if (conferenceRegistrationList.size() >= 5) {
 			response.sendRedirect("error_registration_unavailable.jsp");
