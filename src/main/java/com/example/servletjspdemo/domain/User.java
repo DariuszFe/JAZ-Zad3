@@ -2,12 +2,21 @@ package com.example.servletjspdemo.domain;
 
 public class User {
 	
-	private String login = " ";
-	private String password = " ";
-	private String email = " ";
+	private String login;
+	private String password;
+	private String email;
+
 	private boolean admin;
 	private boolean premium;
-	
+
+    public User() {
+
+    }
+
+    public User(String login, String password) {
+
+    }
+
 	public boolean isAdmin() {
 		return admin;
 	}
@@ -42,7 +51,12 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
+
+    @Override
+    public boolean equals(Object obj) {
+        if(((User)obj).getLogin().equals(login) && ((User)obj).getPassword().equals(password))
+            return true;
+
+        return false;
+    }
 }
