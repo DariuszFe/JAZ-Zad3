@@ -27,8 +27,9 @@ public class AuthenticationFilter implements Filter {
         HttpSession session = httpRequest.getSession(false);
         User user = (User) session.getAttribute("user");
 
-        if(user != null) {
+      
         	
+        	if (user == null){
 
             // TODO: Sprawdzanie warunków i odpowiednie przekierowania zgodnie z intrukcją
             // TODO: przekierowanie za pomocą httpResponse.sendRedirect("/login"); z odpowiednim plikiem

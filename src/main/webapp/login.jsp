@@ -7,14 +7,14 @@
 <title>Login</title>
 </head>
 <body>
-	<form action="loginServlet.jsp" method="post">
+	<form action="loginSevlet.jsp" method="post">
 
 		login :<input type="text" name="login" value="${user.login}" /><br />
 		password :<input type="password" name="password" value="${user.password}" /><br />
 		<input type="submit" value=" OK ">
 
 	</form>
-	<form action="Profile.jsp" method="post">
+	<form action="profile.jsp" method="post">
 	<input type="submit" value="back">
 	</form>
 </body>
