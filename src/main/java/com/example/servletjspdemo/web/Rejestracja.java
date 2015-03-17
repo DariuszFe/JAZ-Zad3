@@ -1,7 +1,7 @@
 
 package com.example.servletjspdemo.web;
 
-import com.example.servletjspdemo.domain.ConferenceRegistration;
+import com.example.servletjspdemo.domain.User;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -20,45 +20,45 @@ public class Rejestracja extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private ServletContext ctx;
-	private List<ConferenceRegistration> conferenceRegistrationList = new ArrayList<ConferenceRegistration>();
+	private List<User> UserList = new ArrayList<User>();
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 
 		ctx = config.getServletContext();
 
-		if (ctx.getAttribute("conferenceRegistrationList") != null)
-			conferenceRegistrationList = (List<ConferenceRegistration>) ctx.getAttribute("conferenceRegistrationList");
+		if (ctx.getAttribute("UserList") != null)
+			UserList = (List<User>) ctx.getAttribute("UserList");
 		else
-			ctx.setAttribute("conferenceRegistrationList", conferenceRegistrationList);
+			ctx.setAttribute("UserList", UserList);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ConferenceRegistration registration = new ConferenceRegistration();
+		User registration = new User();
 
-		registration.setName(request.getParameter("login"));
+		registration.setLogin(request.getParameter("login"));
 		registration.setPassword(request.getParameter("password"));
 		registration.setEmail(request.getParameter("email"));
 
-		if (conferenceRegistrationList.size() >= 5) {
+		if (UserList.size() >= 5) {
 			response.sendRedirect("error_registration_unavailable.jsp");
 			return;
 		}
 
-		if (conferenceRegistrationList.contains(registration)) {
+		if (UserList.contains(registration)) {
 			response.sendRedirect("error_registration_exists.jsp");
 			return;
 		}
 
-		conferenceRegistrationList.add(registration);
+		UserList.add(registration);
 
 		response.sendRedirect("registration_confirm.jsp");
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		if (conferenceRegistrationList.size() >= 5) {
+		if (UserList.size() >= 5) {
 			response.sendRedirect("error_registration_unavailable.jsp");
 			return;
 		}

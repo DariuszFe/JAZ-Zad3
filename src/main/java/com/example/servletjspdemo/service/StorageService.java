@@ -11,7 +11,7 @@ public class StorageService {
 	
 	public void add(User user){
 		User newUser = new User();
-		db.add(newUser);
+		db.add(user);
 	}
 	
 	public List<User> getAllUsers(){

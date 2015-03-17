@@ -4,6 +4,7 @@ public class User {
 	
 	private String login = " ";
 	private String password = " ";
+	private String email = " ";
 	private boolean admin;
 	private boolean premium;
 	
@@ -23,6 +24,12 @@ public class User {
 		this.premium = premium;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email){
+		this.email = email;
+	}
 	public String getLogin() {
 		return login;
 	}

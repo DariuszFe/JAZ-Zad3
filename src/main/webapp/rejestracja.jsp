@@ -14,7 +14,7 @@
     Imię :<input type="text" name="login" required="required"/><br/>
     Email :<input type="text" name="email" required="required"/><br/>
     Password :<input type="password" name="password" required="required"/><br/>
-    Powtórz Email :<input type="password" name="password2" required="required"/><br/>
+    Powtórz Password :<input type="password" name="password2" required="required"/><br/>
 
   <input type="submit" value=" OK ">
   

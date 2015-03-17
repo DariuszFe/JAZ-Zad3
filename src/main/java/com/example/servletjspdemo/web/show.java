@@ -1,7 +1,7 @@
 
 package com.example.servletjspdemo.web;
 
-import com.example.servletjspdemo.domain.ConferenceRegistration;
+import com.example.servletjspdemo.domain.User;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -20,17 +20,17 @@ public class show extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private ServletContext ctx;
-	private List<ConferenceRegistration> conferenceRegistrationList = new ArrayList<ConferenceRegistration>();
+	private List<User> UserList = new ArrayList<User>();
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 
 		ctx = config.getServletContext();
 
-		if (ctx.getAttribute("conferenceRegistrationList") != null)
-			conferenceRegistrationList = (List<ConferenceRegistration>) ctx.getAttribute("conferenceRegistrationList");
+		if (ctx.getAttribute("UserList") != null)
+			UserList = (List<User>) ctx.getAttribute("UserList");
 		else
-			ctx.setAttribute("conferenceRegistrationList", conferenceRegistrationList);
+			ctx.setAttribute("UserList", UserList);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
