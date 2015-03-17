@@ -49,4 +49,9 @@ public class LoginSevlet extends HttpServlet {
 
         httpServletResponse.sendRedirect("loginError.jsp");
     }
+    
+    protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		response.sendRedirect("login.jsp");
+	}
 }

@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Created by robert on 17.03.15.
- */
 @WebFilter("/AuthenticationFilter")
 public class AuthenticationFilter implements Filter {
 
@@ -31,6 +28,7 @@ public class AuthenticationFilter implements Filter {
         User user = (User) session.getAttribute("user");
 
         if(user != null) {
+        	
 
             // TODO: Sprawdzanie warunków i odpowiednie przekierowania zgodnie z intrukcją
             // TODO: przekierowanie za pomocą httpResponse.sendRedirect("/login"); z odpowiednim plikiem
