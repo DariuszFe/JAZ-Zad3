@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter("/AuthenticationFilter")
-public class AuthenticationFilter implements Filter {
+@WebFilter("/PremiumFilter")
+public class PremiumFilter implements Filter {
 
     private ServletContext context;
 
