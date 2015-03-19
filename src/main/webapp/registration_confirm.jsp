@@ -10,5 +10,6 @@
 Twoje zgłoszenie zostało dodane
 
 <p><a href="show">Zobacz zgłoszonych !</a></p>
+<p><a href="login">Zaloguj</a></p>
 </body>
 </html>

@@ -25,17 +25,18 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
 
         HttpSession session = httpRequest.getSession(true);
-        String user = (String) session.getAttribute("user");
+        User user = (User) session.getAttribute("user");
         
         
 
       
         	
         if (user == null ) {                
-        	
+
+           filterChain.doFilter(servletRequest, servletResponse);
         }
 
-        httpResponse.sendRedirect("index.jsp");
+        httpResponse.sendRedirect("login.jsp");
     }
 
     @Override
