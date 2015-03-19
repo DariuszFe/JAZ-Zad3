@@ -24,20 +24,18 @@ public class AuthenticationFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
 
-        HttpSession session = httpRequest.getSession(false);
-        User user = (User) session.getAttribute("user");
+        HttpSession session = httpRequest.getSession(true);
+        String user = (String) session.getAttribute("user");
+        
+        
 
       
         	
-        	if (user == null){
-
-            // TODO: Sprawdzanie warunków i odpowiednie przekierowania zgodnie z intrukcją
-            // TODO: przekierowanie za pomocą httpResponse.sendRedirect("/login"); z odpowiednim plikiem
-
-            filterChain.doFilter(servletRequest, servletResponse);
+        if (user.admin() == null ) {                
+        	
         }
 
-        httpResponse.sendRedirect("/login");
+        httpResponse.sendRedirect("index.jsp");
     }
 
     @Override

@@ -14,9 +14,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by robert on 17.03.15.
- */
 @WebServlet("/login")
 public class LoginSevlet extends HttpServlet {
 

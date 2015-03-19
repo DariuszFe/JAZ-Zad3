@@ -8,7 +8,7 @@
 </head>
 <body>
 <tr>
-<td>${user.login} ${user.password} ${user.Email}</td>
+<td>${user.getLogin} ${user.getPassword} ${user.getEmail}</td>
 </tr>
 </body>
 </html>
