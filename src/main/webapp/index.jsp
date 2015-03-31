@@ -8,6 +8,16 @@
         <title>Demo application</title>
     </head>
     <body>
-        <p><a href="rejestracja.jsp">Rejestracja</a></p>
+    <center>
+        <h2>Dariusz Felskowski s10692</h2>
+        
+        <p><a href="register.jsp">Rejestracja</a></p>
+        <p><a href="login.jsp">Login</a></p>
+        <p><a href="user_profile">Profil Uzytkownika</a></p>
+        <p><a href="premium.jsp">Premium</a></p>
+        <p><a href="premium_list">Lista Uzytkowników premium</a></p>
+        <p><a href="userAddresses.jsp">Lista adresów użytkownika</a></p>
+        <p><a href="makeAddress.jsp">Dodaj nowy adres</a><p>
+        </center>
     </body>
 </html>

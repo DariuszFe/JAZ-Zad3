@@ -7,8 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<tr>
-<td>${user.getLogin} ${user.getPassword} ${user.getEmail}</td>
-</tr>
+
+<jsp:useBean id="address" class="com.example.servletjspdemo.domain.UserAddress" scope="session" />
+<jsp:useBean id="newadd" class="com.example.servletjspdemo.repo.impl.addAddress" scope="application" />
+
+<%
+	newadd.add(address);
+	response.sendRedirect("addressAdded.jsp");
+%>
+
 </body>
 </html>

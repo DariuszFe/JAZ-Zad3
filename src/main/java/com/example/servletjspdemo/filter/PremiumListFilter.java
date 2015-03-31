@@ -2,7 +2,6 @@ package com.example.servletjspdemo.filter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,10 +13,8 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.example.servletjspdemo.domain.User;
-
-@WebFilter("/premium.jsp")
-public class PremiumFilter implements Filter {
+@WebFilter("/premium_list")
+public class PremiumListFilter implements Filter {
 
 	@Override
 	public void destroy() {
@@ -29,38 +26,26 @@ public class PremiumFilter implements Filter {
 		
 		HttpSession session = ((HttpServletRequest) request).getSession();
 		String username = (String) session.getAttribute("username");
-
+		
 		if (username == null) {
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
 			out.println("<html><body>");
 			out.println("<a href=\"index.jsp\">Strona glowna</a>");
-			out.println("<p>Musisz sie zalogowac</p>");
+			out.println("<p>Musisz sie zalogowac aby widziec ta strone</p>");
 			out.println("</html></body>");
 			out.close();
 			return;
-		}
-		
-		if (username.equals("admin")) {
+		} else if (username.equals("admin")) {
 			chain.doFilter(request, response);
 			return;
-		} else {
-			@SuppressWarnings("unchecked")
-			List<User> userList = (List<User>) request.getServletContext().getAttribute("userList");
-			
-			for (User user : userList) {
-				if (username.equals(user.getUsername()) && user.isPremium()) {
-					chain.doFilter(request, response);
-					return;
-				}
-			}
-		} 
+		}
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>");
 		out.println("<a href=\"index.jsp\">Strona glowna</a>");
-		out.println("<p>Musisz posiadac konto premium aby zobaczyc ta strone</p>");
+		out.println("<p>Ta strona jest dostepna tylko dla administratora</p>");
 		out.println("</html></body>");
 		out.close();
 	}

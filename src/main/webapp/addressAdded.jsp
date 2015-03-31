@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p> Błąd logowania </p>
+
+	Pomyślnie dodano adres.
+	<p><a href="index.jsp">Przejdź do strony glownej</a></p>
 
 </body>
 </html>

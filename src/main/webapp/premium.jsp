@@ -7,7 +7,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Demo application</title>
     </head>
+    
     <body>
-        <p>Tutaj ma dostęp tylko uzytkownik z kontem premium</p>
+    <center>
+        <h2>To strona która widza tylko uzytkownicy premium :)</h2>
+        
+        <a href="index.jsp">Strona glowna</a>
+        </center>
     </body>
 </html>

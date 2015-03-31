@@ -8,25 +8,33 @@
         <title>Demo application</title>
     </head>
     
-    <body> <center>
-        <h2>Login</h2>
+    <body>
+    <center>
+        <h2>Rejestracja</h2>
         
-    <a href="index.jsp">Strona glowna</a>
+        <a href="index.jsp">Strona glowna</a>
         
         <div>
-        	<form action="login_action" method="POST">
+        	<form action="register_action" method="POST">
         		<table>
         			<tr>
         				<td>Login</td><td><input type="TEXT" name="username" /></td>
         			</tr>
         			<tr>
-        				<td>Hasło</td><td><input type="password" name="password" /></td>
+        				<td>Haslo</td><td><input type="password" name="password" /></td>
         			</tr>
         			<tr>
-        				<td></td><td><input type="submit" value="Login!" /></td>
+        				<td>Powtorz Haslo</td><td><input type="password" name="confirm_password" /></td>
+        			</tr>
+        			<tr>
+        				<td>Email</td><td><input type="text" name="email" /></td>
+        			</tr>
+        			<tr>
+        				<td></td><td><input type="submit" value="Register!" /></td>
         			</tr>
         		</table>
         	</form>
-        </div></center>
+        </div>
+        </center>
     </body>
 </html>
